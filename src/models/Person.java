@@ -2,7 +2,7 @@ package abstraction;
 
 import enums.Gender;
 
-public abstract class Person {
+public abstract class Person implements Printable {
 
     private String id;
     private String name;
@@ -28,7 +28,7 @@ public abstract class Person {
         System.out.println( "Phone: " + phone);
     }
 
-    public String getID(){
+    public String getId(){
         return id;
     }
 
