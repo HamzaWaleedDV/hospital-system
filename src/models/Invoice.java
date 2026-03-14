@@ -1,4 +1,7 @@
-public class Invoice {
+package models ;
+
+
+public class Invoice  implements Printable {
     private String invoiced;
     private Patient patient;
     private double consultationFee;
