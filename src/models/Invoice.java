@@ -1,14 +1,17 @@
-package models;
+package models ;
 
-public class Invoice implements Printable {
+
+public class Invoice  implements Printable {
     private String invoicedId;
     private Patient patient;
     private double consultationFee;
     private double roomCharges;
     private double medicationCharges;
     private boolean isPaid;
+    
 
     Invoice(String invoicedId, Patient patient, double consultationFee, double roomCharges, double medicationCharges) {
+        this.invoicedId = invoicedId;
         this.patient = patient;
         this.consultationFee = consultationFee;
         this.roomCharges = roomCharges;
@@ -17,7 +20,7 @@ public class Invoice implements Printable {
     }
 
     public double calculateTotal() {
-        return consultationFee + roomCharges + medicationCharges;
+         return consultationFee + roomCharges + medicationCharges;
     }
 
     public double getTotal() {
@@ -33,9 +36,8 @@ public class Invoice implements Printable {
     }
 
     public String getInvoicedId() {
-        return invoicedId;
+        return invoicedId ;
     }
-
     public void printInfo() {
         System.out.println("Invoice for: " + patient.getName() + " (ID: " + patient.getId() + ")\n");
 
@@ -49,5 +51,6 @@ public class Invoice implements Printable {
 
         System.out.println("Payment Status: " + (isPaid ? "Paid" : "Unpaid") + "\n");
     }
+
 
 }
