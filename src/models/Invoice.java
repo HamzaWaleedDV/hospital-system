@@ -2,7 +2,7 @@ package models ;
 
 
 public class Invoice  implements Printable {
-    private String invoiced;
+    private String invoicedId;
     private Patient patient;
     private double consultationFee;
     private double roomCharges;
@@ -10,7 +10,7 @@ public class Invoice  implements Printable {
     private boolean isPaid;
     private double totalPaid;
 
-    Invoice(String invoiced, Patient patient, double consultationFee, double roomCharges, double medicationCharges) {
+    Invoice(String invoicedId, Patient patient, double consultationFee, double roomCharges, double medicationCharges) {
         this.invoiced = invoiced;
         this.patient = patient;
         this.consultationFee = consultationFee;
@@ -19,12 +19,14 @@ public class Invoice  implements Printable {
         this.isPaid = false;
     }
 
-    public void calculateTotal() {
-         totalPaid = consultationFee + roomCharges + medicationCharges;
+    public double calculateTotal() {
+        double totalPaid;
+
+         return consultationFee + roomCharges + medicationCharges;
     }
 
     public double getTotal() {
-        return totalPaid ;
+        return calculateTotal();
     }
 
     public void pay() {
@@ -36,9 +38,9 @@ public class Invoice  implements Printable {
     }
 
     public String getInvoicedId() {
-        return patient.getId().toString();
+        return invoicedId ;
     }
-    public void printinfo() {
+    public void printInfo() {
         System.out.println("Invoice for: " + patient.getName() + " (ID: " + patient.getId() + ")\n");
 
         System.out.println("Consultation Fee: $" + consultationFee + "\n");
