@@ -24,11 +24,16 @@ public class Room implements Printable {
         return true;
     }
 
-    public void dischargePatient() {
+    public boolean dischargePatient() {
+        if (!isOccupied) {
+            return false;
+        }
         this.currentPatient = null;
         this.isOccupied = false;
+        return true;
     }
 
+    @Override
     public void printInfo() {
         System.out.println("========================================");
         System.out.printf("Room Details   : #%d [%s]%n", roomNumber, type);
