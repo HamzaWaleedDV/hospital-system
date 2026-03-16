@@ -1,4 +1,4 @@
-package abstraction;
+package models;
 
 import enums.Gender;
 
