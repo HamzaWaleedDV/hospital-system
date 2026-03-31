@@ -5,13 +5,13 @@ import interfaces.Printable;
 
 public abstract class Person implements Printable {
 
-    private int id;
+    private String id;
     private String name;
     private int age;
     private Gender gender;
     private String phone;
 
-    public Person( int id, String name, int age, Gender gender, String phone ){
+    public Person( String id, String name, int age, Gender gender, String phone ){
         this.id = id;
         this.name = name;
         this.age = age;
@@ -29,7 +29,7 @@ public abstract class Person implements Printable {
         System.out.println( "Phone: " + phone);
     }
 
-    public int getId(){
+    public String getId(){
         return id;
     }
 

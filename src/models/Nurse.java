@@ -1,11 +1,14 @@
 package models;
+
+import enums.Gender;
+
 public class Nurse extends Person  {
 
     private String department;
     private String shift;
     
-    public Nurse(int id,int age,String name,String gender,String phone_number,String department,String shift){
-        super(id,age,name,gender,phone_number);
+    public Nurse(String id,int age,String name,Gender gender,String phone_number,String department,String shift){
+        super(id,name,age,gender,phone_number);
         this.department = department;
         this.shift = shift;
     }
