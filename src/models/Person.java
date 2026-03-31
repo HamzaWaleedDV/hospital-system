@@ -1,16 +1,17 @@
 package models;
 
 import enums.Gender;
+import interfaces.Printable;
 
 public abstract class Person implements Printable {
 
-    private String id;
+    private int id;
     private String name;
     private int age;
     private Gender gender;
     private String phone;
 
-    public Person( String id, String name, int age, Gender gender, String phone ){
+    public Person( int id, String name, int age, Gender gender, String phone ){
         this.id = id;
         this.name = name;
         this.age = age;
@@ -28,7 +29,7 @@ public abstract class Person implements Printable {
         System.out.println( "Phone: " + phone);
     }
 
-    public String getId(){
+    public int getId(){
         return id;
     }
 

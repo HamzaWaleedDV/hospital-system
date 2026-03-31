@@ -1,5 +1,7 @@
 package models;
 
+import interfaces.Printable;
+
 public class MedicalRecord implements Printable {
     private String recordID;
     private String diagnosis;
