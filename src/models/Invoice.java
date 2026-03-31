@@ -1,5 +1,6 @@
 package models ;
 
+import interfaces.Printable;
 
 public class Invoice  implements Printable {
     private String invoicedId;

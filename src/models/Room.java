@@ -1,5 +1,7 @@
 package models;
 
+import interfaces.Printable;
+
 public class Room implements Printable {
     private final int roomNumber;
     private final String type;
