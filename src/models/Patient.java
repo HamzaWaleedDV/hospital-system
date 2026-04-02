@@ -5,21 +5,19 @@ import enums.Gender;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Patient extends Person{
-
+public class Patient extends Person {
     private BloodType bloodType;
     private List<MedicalRecord> medicalHistory;
 
-    public Patient (String id , String name , int age , Gender gender , String phone , BloodType bloodType ){
-      super( id , name , age , gender , phone);
-      this.bloodType = bloodType;
-      this.medicalHistory = new ArrayList<>();
+    public Patient (String id, String name, int age, Gender gender, String phone, BloodType bloodType) {
+        super(id, name, age, gender, phone);
+        this.bloodType = bloodType;
+        this.medicalHistory = new ArrayList<>();
     }
 
     @Override
     public String getRole() {
         return "patient";
-
     }
 
     @Override
@@ -40,16 +38,11 @@ public class Patient extends Person{
         }
     }
     
-    public BloodType getBloodType(){
+    public BloodType getBloodType() {
         return bloodType;
     }
 
     public List<MedicalRecord> getMedicalHistory() {
         return medicalHistory;
     }
-
-
-
-
-
 }
