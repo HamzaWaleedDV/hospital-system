@@ -1,4 +1,7 @@
+package services;
+
 import java.util.ArrayList;
+import models.*;
 
 public class HospitalService {
 
