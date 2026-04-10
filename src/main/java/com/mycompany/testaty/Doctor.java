@@ -1,6 +1,6 @@
-package com.mycompany.testaty;
+package models;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Doctor extends Person {
@@ -12,8 +12,7 @@ public class Doctor extends Person {
     public Doctor(String id, String name, int age, String gender, String phone, String specialization, double fee) {
         super(id, name, age, gender, phone);
         
-   
-        this.specialization = specialization; 
+        this.specialization = specialization;
         this.consultationFee = fee;
         this.bookedSlots = new ArrayList<>();
     }
@@ -24,7 +23,8 @@ public class Doctor extends Person {
 
     public void printInfo() {
         super.printInfo();
-        System.out.println("The Spec: " + specialization + " | The Fee: " + consultationFee);
+        System.out.println("The Specialization: " + specialization);
+        System.out.println("The ConsultationFee: " + consultationFee);
     }
 
     public void schedule(String dateTime) {
@@ -55,4 +55,4 @@ public class Doctor extends Person {
     public List<String> getBookedSlots() {
         return bookedSlots;
     }
-} 
+}
