@@ -11,7 +11,7 @@ public class Invoice  implements Printable {
     private boolean isPaid;
     
 
-    Invoice(String invoicedId, Patient patient, double consultationFee, double roomCharges, double medicationCharges) {
+    public Invoice(String invoicedId, Patient patient, double consultationFee, double roomCharges, double medicationCharges) {
         this.invoicedId = invoicedId;
         this.patient = patient;
         this.consultationFee = consultationFee;

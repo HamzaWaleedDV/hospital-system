@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import enums.Gender;
 
 public class Doctor extends Person {
 
@@ -9,7 +10,7 @@ public class Doctor extends Person {
     private double consultationFee;
     private List<String> bookedSlots;
 
-    public Doctor(String id, String name, int age, String gender, String phone, String specialization, double fee) {
+    public Doctor(String id, String name, int age, Gender gender, String phone, String specialization, double fee) {
         super(id, name, age, gender, phone);
         
         this.specialization = specialization;
