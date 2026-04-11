@@ -45,4 +45,13 @@ public class MedicalRecord implements Printable {
         return doctorName;
 
     }
+
+    @Override
+    public String toString() {
+        return "Record ID: " + recordID
+                + " | Date: " + date
+                + " | Doctor: " + doctorName
+                + " | Diagnosis: " + diagnosis
+                + " | Prescription: " + prescription;
+    }
 }

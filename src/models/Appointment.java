@@ -23,10 +23,25 @@ public class Appointment implements Schedulable, Printable {
 
     @Override
     public void schedule(String dateTime) {
-        if (doctor.isAvailable(dateTime)) {
-            this.dateTime = dateTime;
+        String requestedSlot = dateTime == null ? "" : dateTime.trim();
+
+        if (requestedSlot.isEmpty()) {
+            System.out.println("Cannot schedule. Date/time is required.");
+            return;
+        }
+
+        if (isConfirmed && this.dateTime.equals(requestedSlot)) {
+            System.out.println("Appointment [" + appointmentId + "] is already scheduled at this slot.");
+            return;
+        }
+
+        if (doctor.isAvailable(requestedSlot)) {
+            if (isConfirmed && !this.dateTime.isEmpty()) {
+                doctor.cancel(this.dateTime);
+            }
+            this.dateTime = requestedSlot;
             this.isConfirmed = true;
-            doctor.schedule(dateTime); 
+            doctor.schedule(requestedSlot);
             System.out.println("Appointment [" + appointmentId + "] confirmed!");
         } else {
             System.out.println("Cannot schedule. Doctor not available.");
@@ -36,8 +51,11 @@ public class Appointment implements Schedulable, Printable {
     @Override
     public void cancel() {
         if (isConfirmed) {
-            doctor.cancel();
+            if (!dateTime.isEmpty()) {
+                doctor.cancel(dateTime);
+            }
             this.isConfirmed = false;
+            this.dateTime = "";
             System.out.println("Appointment [" + appointmentId + "] has been cancelled.");
         } else {
             System.out.println("Appointment is not confirmed yet.");
@@ -67,4 +85,5 @@ public class Appointment implements Schedulable, Printable {
     public Patient getPatient()        { return patient; }
     public boolean isConfirmed()       { return isConfirmed; }
     public String getDateTime()        { return dateTime; }
+    public String getNotes()           { return notes; }
 }

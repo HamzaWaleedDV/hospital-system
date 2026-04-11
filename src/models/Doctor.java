@@ -38,6 +38,13 @@ public class Doctor extends Person {
         }
     }
 
+    public void cancel(String dateTime) {
+        if (dateTime == null || dateTime.trim().isEmpty()) {
+            return;
+        }
+        bookedSlots.remove(dateTime);
+    }
+
     public boolean isAvailable(String dateTime) {
         if (dateTime.equals("")) { 
             return false;

@@ -39,6 +39,23 @@ public class Invoice  implements Printable {
     public String getInvoicedId() {
         return invoicedId ;
     }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public double getConsultationFee() {
+        return consultationFee;
+    }
+
+    public double getRoomCharges() {
+        return roomCharges;
+    }
+
+    public double getMedicationCharges() {
+        return medicationCharges;
+    }
+
     public void printInfo() {
         System.out.println("Invoice for: " + patient.getName() + " (ID: " + patient.getId() + ")\n");
 

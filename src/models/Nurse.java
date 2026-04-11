@@ -15,6 +15,14 @@ public class Nurse extends Person  {
     public String getRole(){
         return "Nurse";
     }
+
+    @Override
+    public void printInfo(){
+        super.printInfo();
+        System.out.println("Department : " + department);
+        System.out.println("Shift : " + shift);
+    }
+
     public void printinfo(){
         System.out.println("Department : " + department);
         System.out.println("Shift : " + shift);
